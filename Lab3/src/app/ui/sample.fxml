@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.Controller">
+   <top>
+      <MenuBar fx:id="mainMenu" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="mmFile" mnemonicParsing="false" text="File">
+            <items>
+               <MenuItem fx:id="mmOpen" mnemonicParsing="false" text="Open file..." />
+               <MenuItem fx:id="mmLoad" mnemonicParsing="false" text="Load table..." />
+               <MenuItem fx:id="mmSave" mnemonicParsing="false" text="Save table..." />
+                <SeparatorMenuItem fx:id="mmSeparator1" />
+               <MenuItem fx:id="mmAnalyze" mnemonicParsing="false" text="Analyze" />
+               <MenuItem fx:id="mmClear" mnemonicParsing="false" text="Clear" />
+               <MenuItem fx:id="mmSwitch" mnemonicParsing="false" text="Switch" />
+                <SeparatorMenuItem fx:id="mmSeparator2" />
+                <MenuItem fx:id="mmExit" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+          <Menu fx:id="mmAbout" mnemonicParsing="false" text="About">
+            <items>
+                <MenuItem fx:id="mmHelp" mnemonicParsing="false" text="Help" />
+                <MenuItem fx:id="mmHotKeys" mnemonicParsing="false" text="Hot keys" />
+                <SeparatorMenuItem fx:id="mmSeparator3" />
+                <MenuItem fx:id="mmAboutProgram" mnemonicParsing="false" text="About program" />
+                <MenuItem fx:id="mmAboutAuthors" mnemonicParsing="false" text="About authors" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Pane fx:id="operationalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="765.0" BorderPane.alignment="TOP_LEFT">
+         <Pane fx:id="tablePane" layoutX="2.0" maxHeight="-Infinity" prefHeight="329.0" prefWidth="594.0" style="-fx-border-color: #8E8E8E; -fx-background-color: #A2F786;">
+            <TableView fx:id="operandsTable" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="282.0">
+               <columns>
+                  <TableColumn fx:id="iCol" prefWidth="33.0" resizable="false" text="i" />
+                  <TableColumn fx:id="identifierCol" prefWidth="116.0" resizable="false" text="Identifier" />
+                  <TableColumn fx:id="spenCol" prefWidth="66.0" resizable="false" text="Spen" />
+                  <TableColumn fx:id="typeCol" prefWidth="53.0" resizable="false" text="Type" />
+               </columns>
+            </TableView>
+            <GridPane gridLinesVisible="true" layoutX="305.0" layoutY="10.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-color: #87B158;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="totalSpenTF" maxWidth="-Infinity" prefHeight="31.0" prefWidth="187.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="pTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="mTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="cTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="qTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="87.0" text="Total spen:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="Q:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="T:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="C:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="M:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="35.0" text="P:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="289.0" text="Operands list" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <TableView fx:id="operandsIOTable" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="282.0" visible="false">
+               <columns>
+                  <TableColumn fx:id="iIOCol" prefWidth="33.0" resizable="false" text="i" />
+                  <TableColumn fx:id="identifierIOCol" prefWidth="116.0" resizable="false" text="Identifier" />
+                  <TableColumn fx:id="spenIOCol" prefWidth="66.0" resizable="false" text="Spen" />
+                  <TableColumn fx:id="typeIOCol" prefWidth="53.0" resizable="false" text="Type" />
+               </columns>
+            </TableView>
+            <GridPane fx:id="metricsIOPane" gridLinesVisible="true" layoutX="305.0" layoutY="10.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-color: #87B158;" visible="false">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="totalSpenIOTF" maxWidth="-Infinity" prefHeight="31.0" prefWidth="187.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="pIOTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="mIOTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="cIOTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tIOTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="qIOTF" maxWidth="240.0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="87.0" text="Total spen:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="Q:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="6">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="T:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="C:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="35.0" text="M:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="26.0" prefWidth="35.0" text="P:" textAlignment="CENTER" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="289.0" text="IO operands list" textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </Pane>
+         <Pane fx:id="controlPane" layoutX="596.0" prefHeight="329.0" prefWidth="167.0" style="-fx-background-color: #A2F786; -fx-border-color: #8E8E8E;">
+            <Pane fx:id="analyzePane" layoutX="10.0" layoutY="10.0" prefHeight="312.0" prefWidth="147.0" style="-fx-background-color: #87B158;">
+               <Button fx:id="analyzeBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Analyze" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+               <Button fx:id="loadTableBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Load table" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+               <Button fx:id="saveTableBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Save table" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+               <Button fx:id="exitBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="261.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Exit" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+               <Button fx:id="hotKeysBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="214.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Hot keys" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+               <Button fx:id="switchBtn" alignment="TOP_CENTER" layoutX="14.0" layoutY="156.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="37.0" prefWidth="119.0" text="Switch" textAlignment="CENTER">
+                  <font>
+                     <Font name="GOST Common" size="19.0" />
+                  </font>
+               </Button>
+            </Pane>
+         </Pane>
+      </Pane>
+   </bottom>
+   <center>
+      <Pane fx:id="browsePane" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="761.0" style="-fx-border-color: #8E8E8E;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="textFieldPane" layoutX="9.0" layoutY="4.0" prefHeight="37.0" prefWidth="549.0" style="-fx-background-color: #A2F786; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #8E8E8E; -fx-border-width: 1;">
+               <children>
+                  <TextField fx:id="pathToFile" layoutX="35.0" prefHeight="37.0" prefWidth="514.0" promptText="Path to file" style="-fx-border-color: #8E8E8E; -fx-border-radius: 0;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="folderIcon" fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/folder.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="browseBtn" alignment="TOP_CENTER" layoutX="570.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" text="Browse..." textAlignment="CENTER">
+               <font>
+                  <Font name="GOST Common" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="helpBtn" layoutX="715.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0">
+               <graphic>
+                  <ImageView fx:id="questionIcon" fitHeight="33.0" fitWidth="33.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" x="2.0" y="2.0">
+                     <image>
+                        <Image url="@assets/question_btn.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="1.0" />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+</BorderPane>
